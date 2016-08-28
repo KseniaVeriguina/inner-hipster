@@ -1,0 +1,203 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+// variables
+$contrast: #a00095;
+
+// button styles
+.quiz-button {
+	display: block;
+	margin: 0 auto 50px auto;
+	background-color: $contrast;
+	color: white;
+	padding: 20px 40px;
+	border-radius: 5px;
+	font-family: 'Press Start 2P', cursive;
+	transition: 0.3s all ease;
+	border: 4px solid $contrast;
+	&:hover, &:focus {
+		background-color: #009af7;
+	}
+}
+
+// this class is removed from .reset button when .input[type=submit] is clicked
+.hidden {
+	display: none;
+}
+
+body {
+	background-image: url(../images/catTile.jpg);
+	background-attachment: fixed;
+	text-align: center;
+	font-size: 16px;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+header .wrapper {
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	.quiz-button {
+		margin-bottom: 0px;
+	}
+}
+
+h1 {
+	margin-top: 0;
+	margin-bottom: 100px;
+	font-size: 4rem;
+	line-height: 5rem;
+	letter-spacing: 0.5rem;
+	color: #009af7;
+	text-shadow: 3px 3px 0px $contrast;
+	font-family: 'Press Start 2P', cursive;
+}
+
+h2 {
+	color: #eaeaea;
+	text-transform: uppercase;
+	font-family: 'Audiowide', cursive;
+	padding: 50px 0 40px 0;
+}
+
+fieldset {
+	border: none;
+	background-color: rgba(0,184,255,0.9);
+	margin: 0 0 50px 0;
+	border-radius: 5px;
+	padding: 0px 50px 50px 50px;
+}
+
+img {
+	max-width: 100%;
+}
+
+// Brad added this class as a content wrap 
+// turning each question section into a flex-container
+.content-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+label {
+	width: calc(33.33% - 20px);
+	font-size: 0;
+	margin: 10px;
+}
+
+input[type=radio] {
+	display: none;
+}
+
+input[type=radio]:checked + label>img {
+  box-shadow: 0 0  0px 4px  #fffe00;
+}
+
+// Contents of div.results are inserted after .submit is pressed
+.results {
+	width: 80%;
+	margin: 0 auto 50px auto;
+	background-color: rgba(0,184,255,0.9);
+	border-radius: 5px;
+}
+
+.results h3 {
+	text-align: center;
+	font-size: 2rem;
+	font-family: 'Audiowide', cursive;
+	padding: 50px 50px 0 50px;
+	color: #eaeaea;
+}
+
+.results img {
+	margin: 0 auto;
+	display: block;
+	padding: 0 50px 50px 50px;
+}
+
+.results p {
+	padding: 0 50px;
+	color: #eaeaea;
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+
+footer {
+	background-color: $contrast;
+	color: white;
+	font-size: 0.8rem;
+	text-align: center;
+	padding: 10px 0;
+	a {
+		color: white;
+	}
+}
+
+// media querries
+@media (max-width: 850px) {
+	h1 {
+		font-size: 3rem;
+		line-height: 3.5rem;
+	}
+	label {
+		width: calc(50% - 20px);
+	}
+}
+@media (max-width: 480px) {
+	header .wrapper {
+		height: 400px;
+	}
+	h1 {
+		font-size: 2.3rem;
+		line-height: 2.8rem;
+		padding: 0px 20px;
+	}
+	h2 {
+		font-size: 1.2rem;
+    	line-height: 2rem;
+    	padding: 30px 0 20px 0;
+	}
+	.wrapper {
+		width: 100%;
+
+	}
+	fieldset {
+		padding: 0px 10px 50px 10px;
+	}
+	.results {
+		width: 100%;
+	}
+	.results h3 {
+		padding: 50px 10px 0 10px;
+	}
+
+	.results img {
+		padding: 0 10px 50px 10px;
+	}
+
+	.results p {
+		padding: 0 10px;
+	}
+}
+
+@media(max-width: 380px) {
+	h1 {
+		font-size: 2rem;
+		line-height: 2.8rem;
+	}
+}
+
